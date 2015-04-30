@@ -1,6 +1,7 @@
 require('rspec')
 require('Addressbook')
 require('Contact')
+require('Phone')
 
 describe('Contact') do
 
@@ -27,6 +28,13 @@ describe('Contact') do
     it("will add the birth month of the contact") do
       new_contact = Contact.new({:first_name => "John", :last_name => "Smith", :birth_month => "July"})
       expect(new_contact.birth_month()).to(eq("July"))
+    end
+  end
+
+  describe('#home_phone') do
+    it("return contact home phone number") do
+      new_phones = Phone.new({:home_phone => "555-555-5555"})
+      expect(new_phones.home_phone()).to(eq("555-555-5555"))
     end
   end
 
