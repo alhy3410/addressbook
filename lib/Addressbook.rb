@@ -15,4 +15,9 @@ class Addressbook
     @@all_addressbooks.push(self)
   end
 
+  define_singleton_method(:clear) do
+    @@all_addressbooks = []
+  end
+
+
 end
