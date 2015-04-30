@@ -1,5 +1,4 @@
 require('rspec')
-require('Addressbook')
 require('Contact')
 require('Phone')
 require('Email')
