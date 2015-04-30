@@ -1,0 +1,7 @@
+<h1>Address Books</h1>
+
+<ul>
+  <% @addressbooks.each() do |addressbook| %>
+    <li><a href="/contacts/<%=addressbook.id() %>"> <%= addressbook.name() %></a></li>
+  <% end %>
+</ul>

@@ -1,0 +1,16 @@
+<h1> Add all your information here!</h1>
+
+<h3>Add your contact information</h3>
+  <form action = '/contacts' method ="post">
+    <input id="contact_id" name="contact_id" type="hidden" value="<%= @addressbook.id()%>">
+
+    <label for ="first_name"> Enter the first name of the contact: </label>
+    <input id = "first_name" name="first_name" type="text">
+
+    <label for ="last_name"> Enter the last name of the contact: </label>
+    <input id = "last_name" name="last_name" type="text">
+
+    <label for ="birth_month"> Enter the birth month of the contact: </label>
+    <input id = "birth_month" name="birth_month" type="text">
+    <button type ="submit"> Add Information</button>
+  </form>

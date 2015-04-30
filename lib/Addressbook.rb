@@ -6,6 +6,7 @@ class Addressbook
   define_method(:initialize) do |attributes|
     @name = attributes[:name]
     @id = @@all_addressbooks.length() + 1
+    @contacts = []
   end
 
   define_singleton_method(:all) do
@@ -34,5 +35,11 @@ class Addressbook
     foundaddressbook
   end
 
+  define_method(:contacts) do
+    @contacts
+  end
 
+  define_method(:add_contact) do |contact|
+    @contacts.push(contact)
+  end
 end
