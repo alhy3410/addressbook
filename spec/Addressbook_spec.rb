@@ -53,8 +53,6 @@ describe('Addressbook') do
     end
   end
 
-
-
   describe('Contact.clear') do
     it("will clear all contacts from the list") do
       Contact.new({:first_name => "John", :last_name => "Smith", :birth_month => "July"}).save()
