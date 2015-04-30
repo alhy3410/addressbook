@@ -2,6 +2,7 @@ require('rspec')
 require('Addressbook')
 require('Contact')
 require('Phone')
+require('Email')
 
 describe('Addressbook') do
 
@@ -50,6 +51,20 @@ describe('Addressbook') do
     it("return contact cell phone number") do
       new_phones = Phone.new({:cell_phone => "555-555-5557"})
       expect(new_phones.cell_phone()).to(eq("555-555-5557"))
+    end
+  end
+
+  describe('Email#personal_email') do
+    it("will return a personal email") do
+      new_email = Email.new({:personal_email => "JonSmith@gmail.com"})
+      expect(new_email.personal_email()).to(eq("JonSmith@gmail.com"))
+    end
+  end
+
+  describe('Email#work_email') do
+    it("will return a work email") do
+      new_email = Email.new({:work_email => "JonSmithatwork@gmail.com"})
+      expect(new_email.work_email()).to(eq("JonSmithatwork@gmail.com"))
     end
   end
 
