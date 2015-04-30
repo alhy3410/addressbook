@@ -25,25 +25,14 @@ post('/addressbooks') do
   erb(:addressbooks_success)
 end
 
-get('/contacts') do
-   @addressbook = Addressbook.find(params.fetch('id').to_i())
-  erb(:addressbook_information_form)
-end
-
 get('/contacts/:id') do
   @contacts = Contact.all()
-  #@contact = Contact.find(params.fetch('id'))
+  @contact = Contact.find(params.fetch('id'))
   erb(:contacts)
 end
 
-# get('contacts/new') do
-#   @addressbook = Addressbook.find(params.fetch('id').to_i())
-#   erb(:addressbook_information_form)
-# end
-
-
 get('/addressbooks/:id') do
-#  @contacts = Contact.all()
+  @contacts = Contact.all()
   @addressbook = Addressbook.find(params.fetch('id').to_i())
   erb(:addressbooks_form)
 end
