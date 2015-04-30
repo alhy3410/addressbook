@@ -9,6 +9,7 @@ describe('Addressbook') do
   before() do
     Contact.clear()
     Phone.clear()
+    Email.clear()
   end
 
 
@@ -92,4 +93,11 @@ describe('Addressbook') do
     end
   end
 
+  describe('Email.clear') do
+    it("will clear all emails from the list") do
+      Email.new({:work_email => "JonSmithatwork@gmail.com"}).save()
+      Email.clear()
+      expect(Email.all()).to(eq([]))
+    end
+  end
 end
