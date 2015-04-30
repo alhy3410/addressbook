@@ -11,6 +11,7 @@ describe('Addressbook') do
     Contact.clear()
     Phone.clear()
     Email.clear()
+    Address.clear()
   end
 
 
@@ -113,6 +114,14 @@ describe('Addressbook') do
       Email.new({:work_email => "JonSmithatwork@gmail.com"}).save()
       Email.clear()
       expect(Email.all()).to(eq([]))
+    end
+  end
+
+  describe('Address.clear') do
+    it("will clear all addresses from the list") do
+      Address.new({:home_address => "He lives here st. Portland Oregon 97229"}).save()
+      Address.clear()
+      expect(Address.all()).to(eq([]))
     end
   end
 end
