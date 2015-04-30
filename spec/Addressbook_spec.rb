@@ -29,4 +29,20 @@ describe('Addressbook') do
       expect(Addressbook.all()).to(eq([]))
     end
   end
+
+  describe('#id') do
+    it('returns the id of the addressbook') do
+      friends_address_book_new = Addressbook.new({:name => "Friends Address Book"})
+      expect(friends_address_book_new.id()).to(eq(1))
+    end
+  end
+
+  describe('.find') do
+    it('returns the addressbook by the id number') do
+      friends_address_book_new = Addressbook.new({:name => "Friends Address Book"})
+      friends_address_book_new.save()
+      expect(Addressbook.find(friends_address_book_new.id())).to(eq(friends_address_book_new))
+    end
+  end
+
 end
