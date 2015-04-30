@@ -76,7 +76,13 @@ describe('Addressbook') do
       expect(new_address.home_address()).to(eq("He lives here st. Portland Oregon 97229"))
     end
   end
-  
+
+  describe('Address#office_address') do
+    it("will return the office address") do
+      new_address = Address.new({:office_address => "He works here st. Portland Oregon 97229"})
+      expect(new_address.office_address()).to(eq("He works here st. Portland Oregon 97229"))
+    end
+  end
 
   describe('Contact.clear') do
     it("will clear all contacts from the list") do
