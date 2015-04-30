@@ -33,10 +33,18 @@ describe('Contact') do
 
   describe('#home_phone') do
     it("return contact home phone number") do
-      new_phones = Phone.new({:home_phone => "555-555-5555"})
+      new_phones = Phone.new({:home_phone => "555-555-5555", :work_phone => "555-555-5556"})
       expect(new_phones.home_phone()).to(eq("555-555-5555"))
     end
   end
+
+  describe('#work_phone') do
+    it("return contact work phone number") do
+      new_phones = Phone.new({:home_phone => "555-555-5555", :work_phone => "555-555-5556"})
+      expect(new_phones.work_phone()).to(eq("555-555-5556"))
+    end
+  end
+
 
   describe('.clear') do
     it("will clear all contacts from the list") do
