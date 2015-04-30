@@ -45,6 +45,14 @@ describe('Contact') do
     end
   end
 
+  describe('#cell_phone') do
+    it("return contact cell phone number") do
+      new_phones = Phone.new({:cell_phone => "555-555-5557"})
+      expect(new_phones.cell_phone()).to(eq("555-555-5557"))
+    end
+  end
+
+
 
   describe('.clear') do
     it("will clear all contacts from the list") do
