@@ -3,6 +3,7 @@ require('Addressbook')
 require('Contact')
 require('Phone')
 require('Email')
+require('Address')
 
 describe('Addressbook') do
 
@@ -68,6 +69,14 @@ describe('Addressbook') do
       expect(new_email.work_email()).to(eq("JonSmithatwork@gmail.com"))
     end
   end
+
+  describe('Address#home_address') do
+    it("will return the home address") do
+      new_address = Address.new({:home_address => "He lives here st. Portland Oregon 97229"})
+      expect(new_address.home_address()).to(eq("He lives here st. Portland Oregon 97229"))
+    end
+  end
+  
 
   describe('Contact.clear') do
     it("will clear all contacts from the list") do
